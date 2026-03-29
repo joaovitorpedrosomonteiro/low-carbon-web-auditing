@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web-auditing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3004:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080
+    restart: unless-stopped
